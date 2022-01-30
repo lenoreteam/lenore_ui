@@ -81,9 +81,11 @@ class _MainViewState extends State<MainView> {
                 ),
                 SizedBox(height: 8),
                 LenoreDatePicker(
-                  onPressed: () {
-                    context.read<MainViewModel>().pickDate(context);
+                  context: context,
+                  onChange: (date) {
+                    print(date.toString());
                   },
+                  calendarType: CalendarType.Gregorian,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),

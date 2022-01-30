@@ -1,3 +1,12 @@
+## 0.0.5
+* LenoreTextFormField: added keyboardType 
+* LenoreDatePicker: context required
+* LenoreDatePicker: added calendarType
+* LenoreDatePicker: added onChange (Required)
+* LenoreDatePicker: Removed onPressed
+* added Jalali Calendar
+
+
 ## 0.0.2
 
 * added backgroundColor to LenoreButton

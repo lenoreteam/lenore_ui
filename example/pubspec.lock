@@ -88,13 +88,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.17.0"
-  jalali_calendar:
-    dependency: transitive
-    description:
-      name: jalali_calendar
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.0.4"
   jiffy:
     dependency: transitive
     description:
@@ -108,7 +101,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.5"
   lints:
     dependency: transitive
     description:

@@ -10,18 +10,20 @@ class LenoreTextFormField extends StatelessWidget {
   final IconData? icon;
   final Function(String)? onChange;
   final String errorText;
-  const LenoreTextFormField(
-      {Key? key,
-      required this.controller,
-      this.focusNode,
-      this.hint,
-      this.label,
-      this.password = false,
-      this.required = false,
-      this.icon,
-      this.onChange,
-      this.errorText = 'Field is required'})
-      : super(key: key);
+  final TextInputType? keyboardType;
+  const LenoreTextFormField({
+    Key? key,
+    required this.controller,
+    this.focusNode,
+    this.hint,
+    this.label,
+    this.password = false,
+    this.required = false,
+    this.icon,
+    this.onChange,
+    this.errorText = 'Field is required',
+    this.keyboardType,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,6 +39,7 @@ class LenoreTextFormField extends StatelessWidget {
       child: TextFormField(
         controller: controller,
         focusNode: focusNode,
+        keyboardType: keyboardType,
         decoration: InputDecoration(
           focusColor: Colors.white,
           contentPadding: EdgeInsets.symmetric(
