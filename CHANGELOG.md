@@ -1,3 +1,6 @@
+## 0.0.6
+* LenoreCheckBox: added to library 
+
 ## 0.0.5
 * LenoreTextFormField: added keyboardType 
 * LenoreDatePicker: context required

@@ -9,6 +9,7 @@ I am developing this package and adding widgets to it but I am doing as I need i
 - **LenoreDatatable**
 - **LenoreDatePicker**
 - **LenoreDropDown**
+- **LenoreCheckBox**
 - **LenoreFlatButton**
 - **LenoreLoading**
 - **LenoreTextFormField**

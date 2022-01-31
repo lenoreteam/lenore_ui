@@ -4,9 +4,15 @@ import 'package:flutter/material.dart';
 class MainViewModel with ChangeNotifier {
   bool _isDark = true;
   bool get isDark => _isDark;
-
   toggleDarkMode(BuildContext context) {
     _isDark = !_isDark;
+    notifyListeners();
+  }
+
+  bool? _canFly;
+  bool? get canFly => _canFly;
+  set canFly(bool? value) {
+    _canFly = value;
     notifyListeners();
   }
 

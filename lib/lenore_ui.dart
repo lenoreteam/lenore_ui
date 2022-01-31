@@ -3,6 +3,7 @@ export 'src/widgets/LenoreButton.dart';
 export 'src/widgets/LenoreDatatable/LenoreDatatable.dart';
 export 'src/widgets/LenoreDatePicker.dart';
 export 'src/widgets/LenoreDropDown.dart';
+export 'src/widgets/LenoreCheckBox.dart';
 export 'src/widgets/LenoreFlatButton.dart';
 export 'src/widgets/LenoreLoading.dart';
 export 'src/widgets/LenoreTextFormField.dart';

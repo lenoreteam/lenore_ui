@@ -53,7 +53,24 @@ class _MainViewState extends State<MainView> {
                           : "Screen size is TABLET size!",
                   style: Theme.of(context).textTheme.bodyText1,
                 ),
-
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Divider(endIndent: 64),
+                ),
+                // LenoreButton
+                Text(
+                  'LenoreCheckBox',
+                  style: Theme.of(context).textTheme.bodyText1,
+                ),
+                SizedBox(height: 8),
+                LenoreCheckBox(
+                  value: context.watch<MainViewModel>().canFly ?? false,
+                  onChanged: (value) {
+                    context.read<MainViewModel>().canFly = value;
+                  },
+                  textString:
+                      'Ever feel the freedom of soaring through the sky? Do you wanna?',
+                ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Divider(endIndent: 64),
