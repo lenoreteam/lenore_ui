@@ -5,6 +5,7 @@ import 'package:lenore_ui/src/Helpers/Constants.dart';
 import '../../jalali_calendar/jalali_calendar.dart';
 
 enum CalendarType { Jalali, Gregorian }
+enum DateType { OnlyDate, DateAndTime }
 
 class LenoreDatePicker extends StatelessWidget {
   final String? value;
