@@ -1,3 +1,7 @@
+## 0.0.8
+* LenoreButton: Add captionColor 
+* LenoreButton: Add iconColor 
+
 ## 0.0.7
 * LenoreDatePicker: Fix DateType bug 
 

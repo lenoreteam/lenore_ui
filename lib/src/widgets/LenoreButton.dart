@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lenore_ui/src/Helpers/Constants.dart';
+import 'package:lenore_ui/src/helpers/Constants.dart';
 
 import 'LenoreLoading.dart';
 
@@ -11,6 +11,8 @@ class LenoreButton extends StatelessWidget {
   final Alignment textAlignment;
   final Color? backgroundColor;
   final List<BoxShadow>? boxShadow;
+  final Color captionColor;
+  final Color? iconColor;
 
   LenoreButton({
     Key? key,
@@ -21,6 +23,8 @@ class LenoreButton extends StatelessWidget {
     this.textAlignment = Alignment.center,
     this.backgroundColor,
     this.boxShadow,
+    this.captionColor = colorTextWhite,
+    this.iconColor,
   }) : super(key: key);
 
   @override
@@ -45,18 +49,18 @@ class LenoreButton extends StatelessWidget {
                 child: LenoreLoading(),
               )
             : this.icon == null
-                ? Text('$caption', style: TextStyle(color: colorTextWhite))
+                ? Text('$caption', style: TextStyle(color: captionColor))
                 : Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       Icon(
                         this.icon!,
-                        color: colorTextWhite,
+                        color: iconColor ?? captionColor,
                       ),
                       SizedBox(width: 8),
                       Text(
                         '$caption',
-                        style: TextStyle(color: colorTextWhite),
+                        style: TextStyle(color: captionColor),
                       ),
                     ],
                   ),
