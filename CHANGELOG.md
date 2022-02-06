@@ -1,3 +1,8 @@
+## 0.0.9
+* LenoreTextFormField: Add textAlign 
+* LenoreTextFormField: Add maxLine 
+* LenoreTextFormField: Remove padding 
+
 ## 0.0.8
 * LenoreButton: Add captionColor 
 * LenoreButton: Add iconColor 

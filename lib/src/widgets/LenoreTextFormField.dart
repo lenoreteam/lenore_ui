@@ -8,9 +8,11 @@ class LenoreTextFormField extends StatelessWidget {
   final bool password;
   final bool required;
   final IconData? icon;
+  final int maxLines;
   final Function(String)? onChange;
   final String errorText;
   final TextInputType? keyboardType;
+  final TextAlign textAlign;
   const LenoreTextFormField({
     Key? key,
     required this.controller,
@@ -23,12 +25,13 @@ class LenoreTextFormField extends StatelessWidget {
     this.onChange,
     this.errorText = 'Field is required',
     this.keyboardType,
+    this.maxLines = 1,
+    this.textAlign = TextAlign.start,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 8, top: 4, bottom: 4, right: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: label == null
@@ -40,6 +43,8 @@ class LenoreTextFormField extends StatelessWidget {
         controller: controller,
         focusNode: focusNode,
         keyboardType: keyboardType,
+        maxLines: maxLines,
+        textAlign: textAlign,
         decoration: InputDecoration(
           focusColor: Colors.white,
           contentPadding: EdgeInsets.symmetric(

@@ -160,6 +160,8 @@ class _MainViewState extends State<MainView> {
                 LenoreTextFormField(
                   controller: TextEditingController(),
                   label: 'Enter Your Name',
+                  maxLines: 5,
+                  textAlign: TextAlign.start,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
