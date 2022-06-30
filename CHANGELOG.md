@@ -1,3 +1,5 @@
+## 0.0.10
+* LenoreDatatable: Fix Bug
 ## 0.0.9
 * LenoreTextFormField: Add textAlign 
 * LenoreTextFormField: Add maxLine 

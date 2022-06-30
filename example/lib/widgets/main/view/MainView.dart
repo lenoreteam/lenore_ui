@@ -199,6 +199,9 @@ class _MainViewState extends State<MainView> {
                   padding: const EdgeInsets.all(8.0),
                   child: Divider(endIndent: 64),
                 ),
+                LenoreDatatable(data: [
+                  {"fine": "by me", "hey there": "whats up"}
+                ])
               ],
             ),
           ),
