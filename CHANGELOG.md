@@ -1,4 +1,7 @@
 ## 0.0.11
+* LenoreDatatable: Change add and delete colors 
+
+## 0.0.11
 * LenoreDatatable: Add new row
 * LenoreDatatable: on delete row
 * LenoreDatatable: on edit row

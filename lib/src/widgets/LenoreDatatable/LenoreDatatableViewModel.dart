@@ -32,6 +32,28 @@ class LenoreDatatableViewModel with ChangeNotifier {
   List<DataColumn> generateDataColumns(
       BuildContext context, Function? onEditRow, Function? onDeleteRow) {
     List<DataColumn> dataColumns = [];
+    if (onEditRow != null) {
+      dataColumns.add(
+        DataColumn(
+          label: Icon(
+            Icons.edit,
+            color: Colors.blue,
+          ),
+        ),
+      );
+    }
+    if (onDeleteRow != null) {
+      dataColumns.add(
+        DataColumn(
+          label: Container(
+            child: Icon(
+              Icons.delete,
+              color: Colors.red,
+            ),
+          ),
+        ),
+      );
+    }
     Map<String, dynamic> columns = data[0];
     for (var i = 0; i < columns.keys.toList().length; i++) {
       String column = columns.keys.toList()[i];
@@ -78,12 +100,7 @@ class LenoreDatatableViewModel with ChangeNotifier {
 
       dataColumns.add(dataColumn);
     }
-    if (onEditRow != null) {
-      dataColumns.add(DataColumn(label: Icon(Icons.edit)));
-    }
-    if (onDeleteRow != null) {
-      dataColumns.add(DataColumn(label: Icon(Icons.delete)));
-    }
+
     print('dataColumns length = ${dataColumns.length}');
     return dataColumns;
   }
@@ -106,19 +123,6 @@ class LenoreDatatableViewModel with ChangeNotifier {
   List<DataCell> generateDataCells(Map<String, dynamic> row, int index,
       BuildContext context, Function? onEditRow, Function? onDeleteRow) {
     List<DataCell> dataCells = [];
-    for (var i = 0; i < row.keys.toList().length; i++) {
-      dataCells.add(
-        DataCell(
-          Container(
-            width: 100,
-            child: Text(
-              '${row.values.toList()[i] ?? ""}',
-              style: Theme.of(context).textTheme.bodyText1,
-            ),
-          ),
-        ),
-      );
-    }
     if (onEditRow != null) {
       dataCells.add(
         DataCell(
@@ -127,7 +131,10 @@ class LenoreDatatableViewModel with ChangeNotifier {
               onPressed: () {
                 onEditRow(index, row);
               },
-              icon: Icon(Icons.edit),
+              icon: Icon(
+                Icons.edit,
+                color: Colors.blue,
+              ),
             ),
           ),
         ),
@@ -141,12 +148,29 @@ class LenoreDatatableViewModel with ChangeNotifier {
               onPressed: () {
                 onDeleteRow(index, row);
               },
-              icon: Icon(Icons.delete),
+              icon: Icon(
+                Icons.delete,
+                color: Colors.red,
+              ),
             ),
           ),
         ),
       );
     }
+    for (var i = 0; i < row.keys.toList().length; i++) {
+      dataCells.add(
+        DataCell(
+          Container(
+            constraints: BoxConstraints(maxWidth: 200),
+            child: Text(
+              '${row.values.toList()[i] ?? ""}',
+              style: Theme.of(context).textTheme.bodyText1,
+            ),
+          ),
+        ),
+      );
+    }
+
     print('dataCells length = ${dataCells.length}');
     return dataCells;
   }

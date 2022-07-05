@@ -512,7 +512,6 @@ class MyPaginatedDataTableState extends State<MyPaginatedDataTable> {
                 ),
               Scrollbar(
                 controller: scrollController,
-                thumbVisibility: true,
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   controller: scrollController,

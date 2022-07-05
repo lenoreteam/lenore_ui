@@ -72,7 +72,7 @@ class LenoreDatatableView extends StatelessWidget {
                             dataRows: datatableConsumer.generateDataRows(
                                 context, onEditRow, onDeleteRow),
                             onRowSelect: (int index) {}),
-                        columnSpacing: 1.0,
+                        columnSpacing: 16.0,
                         columns: datatableConsumer.generateDataColumns(
                             context, onEditRow, onDeleteRow),
                         header: onAddRow == null ? null : Text(title ?? ""),
