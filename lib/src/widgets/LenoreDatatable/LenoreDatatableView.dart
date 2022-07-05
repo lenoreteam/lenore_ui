@@ -9,11 +9,19 @@ class LenoreDatatableView extends StatelessWidget {
   final String? title;
   final List<Map<String, dynamic>> data;
   final bool showRowIndex;
+  final String addRowText;
+  final Function? onAddRow;
+  final Function(int, Map<String, dynamic>)? onDeleteRow;
+  final Function(int, Map<String, dynamic>)? onEditRow;
   const LenoreDatatableView({
     Key? key,
     required this.data,
     this.title,
     this.showRowIndex = false,
+    this.onAddRow,
+    this.onDeleteRow,
+    this.onEditRow,
+    this.addRowText = "Add new row",
   }) : super(key: key);
 
   @override
@@ -36,19 +44,18 @@ class LenoreDatatableView extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              title == null
-                  ? Container()
-                  : Text(
+              title != null && onAddRow == null
+                  ? Text(
                       title!,
                       style: Theme.of(context).textTheme.subtitle1,
-                    ),
+                    )
+                  : Container(),
               Container(
-                width: MediaQuery.of(context).size.width,
                 child: data.length > 0
                     ? MyPaginatedDataTable(
                         sortColumnIndex: datatableConsumer.currentSortColumn,
                         sortAscending: datatableConsumer.isAscending,
-                        horizontalMargin: 8.0,
+                        horizontalMargin: 16.0,
                         availableRowsPerPage: [
                           datatableConsumer.rowsPerPage,
                           20,
@@ -62,11 +69,24 @@ class LenoreDatatableView extends StatelessWidget {
                         rowsPerPage: datatableConsumer.rowsPerPage,
                         showFirstLastButtons: true,
                         source: LenoreDataTableSource(
-                            dataRows:
-                                datatableConsumer.generateDataRows(context),
+                            dataRows: datatableConsumer.generateDataRows(
+                                context, onEditRow, onDeleteRow),
                             onRowSelect: (int index) {}),
-                        columnSpacing: 42.0,
-                        columns: datatableConsumer.generateDataColumns(context),
+                        columnSpacing: 1.0,
+                        columns: datatableConsumer.generateDataColumns(
+                            context, onEditRow, onDeleteRow),
+                        header: onAddRow == null ? null : Text(title ?? ""),
+                        actions: onAddRow == null
+                            ? null
+                            : [
+                                LenoreButton(
+                                  caption: addRowText,
+                                  icon: Icons.add,
+                                  onPressed: () {
+                                    onAddRow!();
+                                  },
+                                )
+                              ],
                       )
                     : LenoreNoDataWidget(),
               ),

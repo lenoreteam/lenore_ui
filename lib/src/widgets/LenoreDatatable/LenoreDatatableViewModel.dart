@@ -29,7 +29,8 @@ class LenoreDatatableViewModel with ChangeNotifier {
     return dataWithRowNumber;
   }
 
-  List<DataColumn> generateDataColumns(BuildContext context) {
+  List<DataColumn> generateDataColumns(
+      BuildContext context, Function? onEditRow, Function? onDeleteRow) {
     List<DataColumn> dataColumns = [];
     Map<String, dynamic> columns = data[0];
     for (var i = 0; i < columns.keys.toList().length; i++) {
@@ -74,31 +75,42 @@ class LenoreDatatableViewModel with ChangeNotifier {
           notifyListeners();
         },
       );
+
       dataColumns.add(dataColumn);
     }
+    if (onEditRow != null) {
+      dataColumns.add(DataColumn(label: Icon(Icons.edit)));
+    }
+    if (onDeleteRow != null) {
+      dataColumns.add(DataColumn(label: Icon(Icons.delete)));
+    }
+    print('dataColumns length = ${dataColumns.length}');
     return dataColumns;
   }
 
-  List<DataRow> generateDataRows(BuildContext context) {
+  List<DataRow> generateDataRows(
+      BuildContext context, Function? onEditRow, Function? onDeleteRow) {
     List<DataRow> dataRows = [];
 
     for (var i = 0; i < data.length; i++) {
       Map<String, dynamic> row = data[i];
       DataRow dataRow = DataRow(
-        cells: generateDataCells(row, context),
+        cells: generateDataCells(row, i, context, onEditRow, onDeleteRow),
       );
       dataRows.add(dataRow);
     }
+
     return dataRows;
   }
 
-  List<DataCell> generateDataCells(
-      Map<String, dynamic> row, BuildContext context) {
+  List<DataCell> generateDataCells(Map<String, dynamic> row, int index,
+      BuildContext context, Function? onEditRow, Function? onDeleteRow) {
     List<DataCell> dataCells = [];
     for (var i = 0; i < row.keys.toList().length; i++) {
       dataCells.add(
         DataCell(
           Container(
+            width: 100,
             child: Text(
               '${row.values.toList()[i] ?? ""}',
               style: Theme.of(context).textTheme.bodyText1,
@@ -107,6 +119,35 @@ class LenoreDatatableViewModel with ChangeNotifier {
         ),
       );
     }
+    if (onEditRow != null) {
+      dataCells.add(
+        DataCell(
+          Container(
+            child: IconButton(
+              onPressed: () {
+                onEditRow(index, row);
+              },
+              icon: Icon(Icons.edit),
+            ),
+          ),
+        ),
+      );
+    }
+    if (onDeleteRow != null) {
+      dataCells.add(
+        DataCell(
+          Container(
+            child: IconButton(
+              onPressed: () {
+                onDeleteRow(index, row);
+              },
+              icon: Icon(Icons.delete),
+            ),
+          ),
+        ),
+      );
+    }
+    print('dataCells length = ${dataCells.length}');
     return dataCells;
   }
 }

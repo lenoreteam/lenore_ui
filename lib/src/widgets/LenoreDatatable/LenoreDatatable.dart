@@ -7,11 +7,19 @@ class LenoreDatatable extends StatelessWidget {
   final String? title;
   final List<Map<String, dynamic>> data;
   final bool showRowIndex;
+  final String addRowText;
+  final Function? onAddRow;
+  final Function(int, Map<String, dynamic>)? onDeleteRow;
+  final Function(int, Map<String, dynamic>)? onEditRow;
   const LenoreDatatable({
     Key? key,
     required this.data,
     this.title,
     this.showRowIndex = false,
+    this.onAddRow,
+    this.onDeleteRow,
+    this.onEditRow,
+    this.addRowText = "Add new row",
   }) : super(key: key);
 
   @override
@@ -26,6 +34,10 @@ class LenoreDatatable extends StatelessWidget {
         data: data,
         title: title,
         showRowIndex: showRowIndex,
+        onAddRow: onAddRow,
+        onDeleteRow: onDeleteRow,
+        onEditRow: onEditRow,
+        addRowText: addRowText,
       ),
     );
   }

@@ -57,6 +57,45 @@ class _MainViewState extends State<MainView> {
                   padding: const EdgeInsets.all(8.0),
                   child: Divider(endIndent: 64),
                 ),
+                LenoreDatatable(
+                  title: 'Title',
+                  onAddRow: () {
+                    print('add New Row');
+                  },
+                  onDeleteRow: (index, row) {
+                    print('deleting row number $index: $row');
+                  },
+                  onEditRow: (index, row) {
+                    print('editing row number $index: $row');
+                  },
+                  data: [
+                    {
+                      "fine": "by me",
+                      "fine1": "by meeeeeeeeeeeeeeeeeeeeeee",
+                      "fine2": "by meeeeeeeeeeeee",
+                      "fine3": "by me",
+                      "fine4": "by me",
+                      "dfg": "by me",
+                      "fgdfg": "by me",
+                      "dfg": "by me",
+                      "dgfg": "by me",
+                      "xcvcv": "by me",
+                      "bvcb": "by me",
+                      "ewdfs": "by me",
+                      "serqwfd": "by me",
+                      "3er4easdf": "by me",
+                      "fine5": "by me",
+                      "fine6": "by meeeeeeeeeeeeeeeeeeee",
+                      "fine7": "by me",
+                      "fine8": "by me",
+                      "hey there": "whats up"
+                    },
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Divider(endIndent: 64),
+                ),
                 // LenoreButton
                 Text(
                   'LenoreCheckBox',
@@ -195,13 +234,6 @@ class _MainViewState extends State<MainView> {
                     ));
                   },
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Divider(endIndent: 64),
-                ),
-                LenoreDatatable(data: [
-                  {"fine": "by me", "hey there": "whats up"}
-                ])
               ],
             ),
           ),

@@ -1,3 +1,7 @@
+## 0.0.11
+* LenoreDatatable: Add new row
+* LenoreDatatable: on delete row
+* LenoreDatatable: on edit row
 ## 0.0.10
 * LenoreDatatable: Fix Bug
 ## 0.0.9
