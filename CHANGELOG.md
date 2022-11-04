@@ -1,4 +1,6 @@
-## 0.0.11
+## 0.0.13
+* LenoreDatePicker: Change FlatButton to TextButton due to FlatButton deprecation
+## 0.0.12
 * LenoreDatatable: Change add and delete colors 
 
 ## 0.0.11
