@@ -1,3 +1,6 @@
+## 0.0.14
+* LenoreNoInternetWidget: Fix Not using the string values
+* upgrade jiffy version to 5.0.0
 ## 0.0.13
 * LenoreDatePicker: Change FlatButton to TextButton due to FlatButton deprecation
 ## 0.0.12

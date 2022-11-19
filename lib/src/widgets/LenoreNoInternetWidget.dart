@@ -30,12 +30,12 @@ class LenoreNoInternetWidget extends StatelessWidget {
             ),
             SizedBox(height: 16),
             Text(
-              'No connection',
+              noConnectionText,
               style: Theme.of(context).textTheme.headline6,
             ),
             SizedBox(height: 16),
             LenoreButton(
-              caption: 'Reload',
+              caption: reloadText,
               onPressed: () {
                 reloadFunction();
               },
