@@ -1,6 +1,6 @@
 ## 0.0.16
-* Downgraded Jiffy to 2.2.0
-* Downgraded Intl to 0.16.0
+* Upgraded Jiffy to 4.0.0
+* Upgraded Intl to 0.17.0
 ## 0.0.15
 * LenoreDatePicker: Fix minor bugs
 ## 0.0.14
