@@ -80,21 +80,21 @@ packages:
       name: intl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.17.0"
+    version: "0.16.1"
   jiffy:
     dependency: transitive
     description:
       name: jiffy
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.0.0"
+    version: "2.2.0"
   lenore_ui:
     dependency: "direct main"
     description:
       path: ".."
       relative: true
     source: path
-    version: "0.0.14"
+    version: "0.0.15"
   lints:
     dependency: transitive
     description:
