@@ -16,7 +16,12 @@ class MainViewModel with ChangeNotifier {
     notifyListeners();
   }
 
-  DateTime? date;
+  String? date;
+
+  setDate(String? newDate) {
+    date = newDate;
+    notifyListeners();
+  }
 
   List<Gender> genders = [
     Gender(title: 'Rather Not Say', id: 0),
@@ -31,17 +36,4 @@ class MainViewModel with ChangeNotifier {
   }
 
   ScrollController scrollController = ScrollController();
-
-  pickDate(BuildContext context) async {
-    final DateTime? picked = await showDatePicker(
-      context: context,
-      initialDate: DateTime.now(),
-      firstDate: DateTime(2015, 8),
-      lastDate: DateTime(2101),
-    );
-    if (picked != null) {
-      date = picked;
-      notifyListeners();
-    }
-  }
 }

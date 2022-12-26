@@ -1,3 +1,5 @@
+## 0.0.15
+* LenoreDatePicker: Fix minor bugs
 ## 0.0.14
 * LenoreNoInternetWidget: Fix Not using the string values
 * upgrade jiffy version to 5.0.0

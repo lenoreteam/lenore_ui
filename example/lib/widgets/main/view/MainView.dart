@@ -140,8 +140,11 @@ class _MainViewState extends State<MainView> {
                   context: context,
                   onChange: (date) {
                     print(date.toString());
+                    context.read<MainViewModel>().setDate(date);
                   },
-                  calendarType: CalendarType.Gregorian,
+                  calendarType: CalendarType.Jalali,
+                  dateType: DateType.DateAndTime,
+                  value: context.watch<MainViewModel>().date,
                 ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),

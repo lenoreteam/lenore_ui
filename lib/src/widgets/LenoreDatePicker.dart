@@ -5,6 +5,7 @@ import 'package:lenore_ui/src/Helpers/Constants.dart';
 import '../../jalali_calendar/jalali_calendar.dart';
 
 enum CalendarType { Jalali, Gregorian }
+
 enum DateType { OnlyDate, DateAndTime }
 
 class LenoreDatePicker extends StatelessWidget {
@@ -73,7 +74,9 @@ class LenoreDatePicker extends StatelessWidget {
           ),
           child: Container(
             child: Text(
-              value ?? emptyText,
+              dateType == DateType.DateAndTime
+                  ? (value ?? '')
+                  : value?.substring(0, 10) ?? emptyText,
               style: value == null
                   ? Theme.of(context)
                       .textTheme
@@ -114,8 +117,8 @@ class LenoreDatePicker extends StatelessWidget {
         return null;
       }
     } else {
-      String? date =
-          await jalaliCalendarPicker(context: context, showTimePicker: true);
+      String? date = await jalaliCalendarPicker(
+          context: context, showTimePicker: dateType == DateType.DateAndTime);
       if (date != null) {
         return date;
       } else {
