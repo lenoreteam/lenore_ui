@@ -51,10 +51,7 @@ class _DatePickerHeader extends StatelessWidget {
     required this.mode,
     required this.onModeChanged,
     required this.orientation,
-  })  : assert(selectedDate != null),
-        assert(mode != null),
-        assert(orientation != null),
-        super(key: key);
+  }) : super(key: key);
 
   final DateTime selectedDate;
   final DatePickerMode mode;

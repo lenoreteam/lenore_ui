@@ -83,6 +83,7 @@ class LenoreTextFormField extends StatelessWidget {
         obscureText: password,
         validator: (val) {
           if (required && val!.isEmpty) return errorText;
+          return null;
         },
         onChanged: onChange,
       ),
