@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class LenoreTextFormField extends StatelessWidget {
   final TextEditingController controller;
@@ -12,6 +13,7 @@ class LenoreTextFormField extends StatelessWidget {
   final Function(String)? onChange;
   final String errorText;
   final TextInputType? keyboardType;
+  final List<TextInputFormatter>? inputFormatters;
   final TextAlign textAlign;
   const LenoreTextFormField({
     Key? key,
@@ -25,6 +27,7 @@ class LenoreTextFormField extends StatelessWidget {
     this.onChange,
     this.errorText = 'Field is required',
     this.keyboardType,
+    this.inputFormatters,
     this.maxLines = 1,
     this.textAlign = TextAlign.start,
   }) : super(key: key);
@@ -43,6 +46,7 @@ class LenoreTextFormField extends StatelessWidget {
         controller: controller,
         focusNode: focusNode,
         keyboardType: keyboardType,
+        inputFormatters: inputFormatters,
         maxLines: maxLines,
         textAlign: textAlign,
         decoration: InputDecoration(

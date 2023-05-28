@@ -1,3 +1,5 @@
+## 0.0.17
+* LenoreTextFormField: Add inputFormatters
 ## 0.0.16
 * Upgraded Jiffy to 4.0.0
 * Upgraded Intl to 0.17.0
