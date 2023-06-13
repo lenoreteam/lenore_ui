@@ -1,3 +1,7 @@
+## 0.0.19
+* LenoreTextFormField: Add enable
+## 0.0.18
+* Minor Fixes
 ## 0.0.17
 * LenoreTextFormField: Add inputFormatters
 ## 0.0.16

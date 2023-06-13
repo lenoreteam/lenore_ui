@@ -15,6 +15,7 @@ class LenoreTextFormField extends StatelessWidget {
   final TextInputType? keyboardType;
   final List<TextInputFormatter>? inputFormatters;
   final TextAlign textAlign;
+  final bool enabled;
   const LenoreTextFormField({
     Key? key,
     required this.controller,
@@ -23,6 +24,7 @@ class LenoreTextFormField extends StatelessWidget {
     this.label,
     this.password = false,
     this.required = false,
+    this.enabled = true,
     this.icon,
     this.onChange,
     this.errorText = 'Field is required',
@@ -43,6 +45,7 @@ class LenoreTextFormField extends StatelessWidget {
             : null,
       ),
       child: TextFormField(
+        enabled: enabled,
         controller: controller,
         focusNode: focusNode,
         keyboardType: keyboardType,
