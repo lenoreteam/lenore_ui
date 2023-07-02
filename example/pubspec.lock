@@ -87,18 +87,10 @@ packages:
     dependency: transitive
     description:
       name: intl
-      sha256: "910f85bce16fb5c6f614e117efa303e85a1731bb0081edf3604a2ae6e9a3cc91"
+      sha256: "3bc132a9dbce73a7e4a21a17d06e1878839ffbf975568bc875c60537824b0c4d"
       url: "https://pub.dev"
     source: hosted
-    version: "0.17.0"
-  jiffy:
-    dependency: transitive
-    description:
-      name: jiffy
-      sha256: "2b3d31a5ced81bdf0e2ae454e1dc5e265f1f1f02f122904ae84857d6a1aa614f"
-      url: "https://pub.dev"
-    source: hosted
-    version: "4.1.0"
+    version: "0.18.1"
   js:
     dependency: transitive
     description:
@@ -113,7 +105,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.19"
+    version: "0.0.20"
   lints:
     dependency: transitive
     description:

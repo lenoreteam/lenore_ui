@@ -136,16 +136,7 @@ class _MainViewState extends State<MainView> {
                   style: Theme.of(context).textTheme.bodyText1,
                 ),
                 SizedBox(height: 8),
-                LenoreDatePicker(
-                  context: context,
-                  onChange: (date) {
-                    print(date.toString());
-                    context.read<MainViewModel>().setDate(date);
-                  },
-                  calendarType: CalendarType.Jalali,
-                  dateType: DateType.DateAndTime,
-                  value: context.watch<MainViewModel>().date,
-                ),
+
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Divider(endIndent: 64),
